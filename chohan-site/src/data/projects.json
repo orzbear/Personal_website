@@ -1,0 +1,64 @@
+[
+  {
+    "slug": "smart-fit",
+    "title": "Smart-Fit",
+    "summary": "Health & fitness planner with analytics and habit tracking.",
+    "stack": ["React", "Node", "Postgres"],
+    "year": 2025,
+    "type": "Full-Stack",
+    "featured": true,
+    "featuredRank": 1,
+    "metrics": ["5k MAU", "+42% retention"],
+    "image": "/images/projects/smart-fit.png",
+    "links": { "demo": "#", "github": "#", "case": "/projects/smart-fit" }
+  },
+  {
+    "slug": "nlp-insights",
+    "title": "NLP Insights",
+    "summary": "Topic modeling + RAG for policy documents.",
+    "stack": ["Python", "FastAPI", "LangChain"],
+    "year": 2024,
+    "type": "AI/ML",
+    "featured": true,
+    "featuredRank": 2,
+    "metrics": ["~120ms top-k", "F1 +8%"],
+    "image": "/images/projects/nlp-insights.png",
+    "links": { "demo": "#", "github": "#", "case": "/projects/nlp-insights" }
+  },
+  {
+    "slug": "nlp-insights2",
+    "title": "Hansford Parliamentary Data sets",
+    "summary": "Topic modeling + RAG for policy documents.",
+    "stack": ["Python", "FastAPI", "LangChain"],
+    "year": 2024,
+    "type": "AI/ML",
+    "featured": true,
+    "featuredRank": 2,
+    "metrics": ["~120ms top-k", "F1 +8%"],
+    "image": "/images/projects/nlp-insights.png",
+    "links": { "demo": "#", "github": "#", "case": "/projects/nlp-insights" }
+  },
+  {
+    "slug": "debugger-mcp",
+    "title": "Debugger MCP",
+    "summary": "DAP MVP with debugpy + MCP host.",
+    "stack": ["TypeScript", "Python"],
+    "year": 2025,
+    "type": "Tools",
+    "featured": false,
+    "image": "/images/projects/debugger.png",
+    "links": { "github": "#", "case": "/projects/debugger-mcp" }
+  },
+  {
+    "slug": "viz-lab",
+    "title": "Viz Lab",
+    "summary": "Explorable data viz components (charts, maps).",
+    "stack": ["D3", "React"],
+    "year": 2023,
+    "type": "Frontend",
+    "featured": false,
+    "image": "/images/projects/viz-lab.png",
+    "links": { "demo": "#", "github": "#", "case": "/projects/viz-lab" }
+  }
+]
+

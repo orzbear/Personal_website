@@ -1,20 +1,53 @@
-import { NavLink } from "react-router-dom"
-const link = "px-3 py-2 rounded-lg text-sm font-medium hover:bg-gray-100 transition"
+import { useLocation, useNavigate } from "react-router-dom"
+import PillNav from "./PillNav" // adjust path if needed
 
 export default function Navbar() {
+  const location = useLocation()
+  const navigate = useNavigate()
+
+  const onClickCapture: React.MouseEventHandler<HTMLDivElement> = (e) => {
+    const target = e.target as HTMLElement
+    const a = target.closest("a") as HTMLAnchorElement | null
+    if (!a) return
+    const href = a.getAttribute("href")
+    if (!href) return
+    if (href.startsWith("/")) {
+      e.preventDefault()
+      navigate(href)
+    }
+  }
+
   return (
-    <header className="sticky top-0 z-50 bg-white/80 backdrop-blur border-b">
-      <nav className="mx-auto max-w-6xl px-4 py-3 flex items-center justify-between">
-        <NavLink to="/" className="text-lg font-semibold">Cho-Han Hsiung</NavLink>
-        <div className="flex gap-1">
-          <NavLink to="/about" className={link}>About</NavLink>
-          <NavLink to="/projects" className={link}>Projects</NavLink>
-          <NavLink to="/ai-data" className={link}>AI & Data</NavLink>
-          <NavLink to="/political-research" className={link}>Political Research</NavLink>
-          <NavLink to="/cv" className={link}>CV</NavLink>
-          <NavLink to="/contact" className={link}>Contact</NavLink>
+    <header className="fixed top-0 left-0 right-0 z-50
+                     bg-white/70 dark:bg-slate-900/60
+                     backdrop-blur-md backdrop-saturate-150">
+      <div className="mx-auto max-w-6xl px-4 py-4">
+        <div onClickCapture={onClickCapture}>
+          <div className="flex justify-center items-center w-full">
+          <PillNav
+            logo="/images/bear-logo.png"
+            logoAlt="Bear Logo"
+
+            items={[
+              { label: "Home", href: "/" },
+              { label: "About", href: "/About" },
+              { label: "Projects", href: "/projects" },
+              // { label: "AI & Data", href: "/ai-data" },
+              { label: "Research", href: "/research" },
+              { label: "Contact", href: "/contact" }
+            ]}
+
+            activeHref={location.pathname}
+            className="w-full"
+            ease="power2.out"
+            baseColor="#FFFFFF"
+            pillColor="#0F172A"
+            hoveredPillTextColor="#000000"
+            pillTextColor="#FFFFFF"
+          />
         </div>
-      </nav>
+      </div>
+      </div>
     </header>
   )
 }
