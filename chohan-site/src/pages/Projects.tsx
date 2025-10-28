@@ -12,43 +12,102 @@ import { motion } from "motion/react";
 import raw from "@/data/projects.json";
 import type { Project } from "@/types/project";
 import { useMemo } from "react";
+import { Link } from "react-router-dom";
+import ProjectBadge from "@/components/ProjectBadge";
 
 
 export default function Projects() {
-const items = useMemo(() => {
+  const projects = useMemo(() => raw as Project[], []);
+
   const variants = [<SkeletonOne />, <SkeletonTwo />, <SkeletonThree />, <SkeletonFour />, <SkeletonFive />];
   const pickSkeleton = (i: number) => variants[i % variants.length];
 
-  const projects = raw as Project[];
+  const layoutPattern = ["2", "1", "1", "2", "1", "1", "1"]; // your pattern
 
-  // Custom layout pattern
-  const layoutPattern = ["2", "1", "1", "2", "2"]; // span pattern sequence
+  const items = useMemo(() => {
+    return projects.map((p, i) => {
+      const span = layoutPattern[i % layoutPattern.length];
+      const isFeaturedSpan = span === "2"; // treat 2-span like featured for metrics
 
-  return projects.map((p, i) => {
-    const span = layoutPattern[i % layoutPattern.length]; // repeat pattern
-    return {
-      title: p.title,
-      description: <span className="text-sm">{p.summary}</span>,
-      header: pickSkeleton(i),
-      className: span === "2" ? "md:col-span-2" : "md:col-span-1",
-      icon: null,
-    };
-  });
-}, []);
+      const body = (
+        <div className="space-y-3">
+          {/* Title + Year */}
+          <div className="flex items-center justify-between">
+            <h3 className="text-lg font-semibold">{p.title}</h3>
+            <span className="text-xs text-gray-500">{p.year}</span>
+          </div>
+
+          {/* Summary */}
+          <p className="text-sm text-gray-700 line-clamp-3">{p.summary}</p>
+
+          {/* Metrics (only for 2-span/featured) */}
+          {isFeaturedSpan && p.metrics?.length ? (
+            <div className="flex flex-wrap gap-2">
+              {p.metrics.map(m => (
+                <span key={m} className="inline-block text-xs px-2 py-1 rounded-full bg-emerald-50 text-emerald-700 border border-emerald-100">
+                  {m}
+                </span>
+              ))}
+            </div>
+          ) : null}
+
+          {/* Stack */}
+          {!!p.stack?.length && (
+            <div className="flex flex-wrap gap-2">
+              {p.stack.map(s => (
+                <ProjectBadge key={s}>{s}</ProjectBadge>
+              ))}
+            </div>
+          )}
+
+          {/* Links */}
+          <div className="flex items-center gap-3 text-sm">
+            {p.links?.demo && (
+              <a className="hover:underline text-gray-700" href={p.links.demo} target="_blank" rel="noreferrer">
+                Demo
+              </a>
+            )}
+            {p.links?.github && (
+              <a className="hover:underline text-gray-700" href={p.links.github} target="_blank" rel="noreferrer">
+                GitHub
+              </a>
+            )}
+          </div>
+        </div>
+      );
+
+      return {
+        title: null,                               
+        description: body,                         
+        header: pickSkeleton(i),                   
+        className: `${span === "2" ? "md:col-span-2" : "md:col-span-1"} h-full`,
+        icon: null,
+      };
+    });
+  }, [projects]);
+
 
   return (
-    <BentoGrid className="max-w-4xl mx-auto md:auto-rows-[20rem]">
-      {items.map((item, i) => (
-        <BentoGridItem
-          key={i}
-          title={item.title}
-          description={item.description}
-          header={item.header}                 // stays the skeleton
-          className={cn("[&>p:text-lg]", item.className)}
-          icon={item.icon}
-        />
-      ))}
-    </BentoGrid>
+    <div className="space-y-10 py-7">
+      <header className="space-y-3">
+        <h1 className="text-3xl font-bold">Projects</h1>
+        <p className="text-gray-700">
+          A focused gallery of featured work and select builds.
+        </p>
+      </header>
+      <BentoGrid className="max-w-6xl mx-auto md:auto-rows-[22rem] gap-6">
+        {items.map((item, i) => (
+          <BentoGridItem
+            key={i}
+            title={item.title}
+            description={item.description}
+            header={item.header}
+            className={cn("[&>p:text-lg]", item.className)}
+            icon={item.icon}
+          />
+        ))}
+      </BentoGrid>
+    </div>
   );
 }
 

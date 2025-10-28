@@ -1,6 +1,7 @@
 import { Outlet } from "react-router-dom"
 import Navbar from "../components/Navbar"
 import Footer from "../components/Footer"
+import PageTransition from "@/components/PageTransition";
 
 export default function SiteLayout() {
   return (
@@ -8,7 +9,10 @@ export default function SiteLayout() {
       <Navbar />
       <main className="flex-1">
         <div className="mx-auto max-w-6xl px-4 py-10">
-          <Outlet />
+          <PageTransition>
+            <Outlet /> 
+          </PageTransition>
+
         </div>
       </main>
       <Footer />
