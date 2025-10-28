@@ -33,8 +33,8 @@ export default function Navbar() {
               { label: "About", href: "/About" },
               { label: "Projects", href: "/projects" },
               // { label: "AI & Data", href: "/ai-data" },
-              { label: "Research", href: "/research" },
-              { label: "Contact", href: "/contact" }
+              { label: "Research & Writing", href: "/research" },
+              // { label: "Recipes", href: "/Recipes" }
             ]}
 
             activeHref={location.pathname}

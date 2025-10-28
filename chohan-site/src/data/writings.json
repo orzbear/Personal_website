@@ -1,0 +1,60 @@
+[
+  {
+    "id": "rag-eval",
+    "title": "Evaluating RAG Systems Beyond Accuracy",
+    "date": "2025-09-10",
+    "summary": "A practical framework for coverage, faithfulness, and robustness in retrieval-augmented generation.",
+    "category": "ai-data",
+    "tags": ["RAG", "Evaluation"],
+    "readTime": "7 min",
+    "link": "#"
+  },
+  {
+    "id": "time-series",
+    "title": "Probabilistic Forecasting for Product Metrics",
+    "date": "2025-07-22",
+    "summary": "When to prefer quantile loss over MSE and a simple baseline you can ship.",
+    "category": "ai-data",
+    "tags": ["Forecasting"],
+    "readTime": "5 min",
+    "link": "#"
+  },
+  {
+    "id": "electoral-systems",
+    "title": "Runoff vs. Plurality: Strategic Voting Effects",
+    "date": "2025-05-03",
+    "summary": "How institutional rules shape voter incentives and candidate positioning.",
+    "category": "political-science",
+    "tags": ["Elections"],
+    "readTime": "8 min",
+    "link": "#"
+  },
+  {
+    "id": "digital-governance",
+    "title": "Digital Governance for AI",
+    "date": "2025-08-14",
+    "summary": "A lightweight model for capability thresholds, audits, and disclosure.",
+    "category": "policy-writing",
+    "tags": ["AI Policy"],
+    "readTime": "6 min",
+    "link": "#"
+  },
+  {
+    "id": "rational-loathing",
+    "title": "“Rational Loathing”: The Policy Implications of Affective Polarization in Taiwan",
+    "date": "2025-10-28",
+    "summary": "Finds that partisan hostility in Taiwan is grounded in cross-Strait and transitional-justice policy divides, not pure identity animus.",
+    "category": "political-science",
+    "tags": ["Polarization", "Taiwan Politics"],
+    "readTime": "8 min"
+  },
+  {
+    "id": "social-media-economic-voting",
+    "title": "Social Media and Economic Voting: Revisiting Media Effects in the Digital Era",
+    "date": "2025-10-28",
+    "summary": "Explores how social-media usage both informs and biases economic voting in the U.S. context.",
+    "category": "political-science",
+    "tags": ["Social Media", "Economic Voting"],
+    "readTime": "9 min"
+  }
+]

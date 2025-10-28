@@ -2,13 +2,12 @@
   {
     "slug": "smart-fit",
     "title": "Smart-Fit",
-    "summary": "Health & fitness planner with analytics and habit tracking.",
+    "summary": "Health & fitness planner with analytics and habit tracking. Health & fitness planner with analytics and habit tracking. Health & fitness planner with analytics and habit tracking. Health & fitness planner with analytics and habit tracking.",
     "stack": ["React", "Node", "Postgres"],
     "year": 2025,
     "type": "Full-Stack",
     "featured": true,
     "featuredRank": 1,
-    "metrics": ["5k MAU", "+42% retention"],
     "image": "/images/projects/smart-fit.png",
     "links": { "demo": "#", "github": "#", "case": "/projects/smart-fit" }
   },
@@ -59,6 +58,29 @@
     "featured": false,
     "image": "/images/projects/viz-lab.png",
     "links": { "demo": "#", "github": "#", "case": "/projects/viz-lab" }
+  },
+    {
+    "slug": "debugger-mcp",
+    "title": "Debugger MCP",
+    "summary": "DAP MVP with debugpy + MCP host.",
+    "stack": ["TypeScript", "Python"],
+    "year": 2025,
+    "type": "Tools",
+    "featured": false,
+    "image": "/images/projects/debugger.png",
+    "links": { "github": "#", "case": "/projects/debugger-mcp" }
+  },
+    {
+    "slug": "debugger-mcp",
+    "title": "Debugger MCP",
+    "summary": "DAP MVP with debugpy + MCP host.",
+    "stack": ["TypeScript", "Python"],
+    "year": 2025,
+    "type": "Tools",
+    "featured": false,
+    "image": "/images/projects/debugger.png",
+    "links": { "github": "#", "case": "/projects/debugger-mcp" }
   }
+  
 ]
 
