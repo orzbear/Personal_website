@@ -12,6 +12,5 @@ export interface Project {
   links?: {
     demo?: string;
     github?: string;
-    case?: string;
   };
 }
