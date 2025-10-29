@@ -2,10 +2,11 @@
   "name": "chohan-site",
   "private": true,
   "version": "0.0.0",
+  "homepage": "https://orzbear.github.io/",
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "tsc -b && vite build",
+    "build": "tsc -b && vite build && powershell -Command copy dist\\index.html dist\\404.html",
     "lint": "eslint .",
     "preview": "vite preview"
   },
