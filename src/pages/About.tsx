@@ -7,7 +7,7 @@ export default function About() {
       {/* Left column – Photo + Socials */}
       <div className="flex flex-col items-center">
         <img
-          src="./public/images/profile.jpg" 
+          src={`${import.meta.env.BASE_URL}images/profile.jpg`}
           alt="Cho-Han Hsiung portrait"
           className="rounded-2xl w-90 h-75 object-cover shadow-lg mb-6"
         />
