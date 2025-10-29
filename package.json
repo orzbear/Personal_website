@@ -6,8 +6,9 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "vite build && cp dist/index.html dist/404.html",
-    "typecheck": "tsc --noEmit",
+    "build:ci": "vite build && cp dist/index.html dist/404.html && touch dist/.nojekyll",
+    "build:win": "vite build && powershell -Command \"Copy-Item dist\\index.html dist\\404.html; New-Item -Path dist\\.nojekyll -ItemType File -Force | Out-Null\"",
+    "build": "npm run build:ci",
     "lint": "eslint .",
     "preview": "vite preview"
   },
